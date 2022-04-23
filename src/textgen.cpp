@@ -15,7 +15,7 @@ textgen::textgen(std::string pathToSource, int prefixLength) {
 
         std::vector<std::string> tempSuff = GetSuff(tempPref);
 
-        std::map<prefix, std::vector<std::string>>::iterator it 
+        std::map<prefix, std::vector<std::string>>::iterator it
         = statetab.find(tempPref);
         if (it == statetab.end()) {
             statetab.insert(make_pair(tempPref, tempSuff));
