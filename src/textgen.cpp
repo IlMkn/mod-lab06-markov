@@ -15,7 +15,8 @@ textgen::textgen(std::string pathToSource, int prefixLength) {
 
         std::vector<std::string> tempSuff = GetSuff(tempPref);
 
-        std::map<prefix, std::vector<std::string>>::iterator it = statetab.find(tempPref);
+        std::map<prefix, std::vector<std::string>>::iterator it 
+        = statetab.find(tempPref);
         if (it == statetab.end()) {
             statetab.insert(make_pair(tempPref, tempSuff));
         }
@@ -39,9 +40,8 @@ std::vector<std::string> textgen::GetSuff(prefix pref) {
                 tempSum++;
             }
         }
-
         if (tempSum == NPREF) {
-            if (std::find(suffix.begin(), suffix.end(), 
+            if (std::find(suffix.begin(), suffix.end(),
                 tempWords[i + NPREF]) == suffix.end()) {
                 suffix.push_back(tempWords[i + NPREF]);
             }
@@ -87,8 +87,7 @@ std::string textgen::CreateText(int wordcount) {
 void textgen::ReadSourceFile(std::string pathToSourceText) {
     std::ifstream infile(pathToSourceText);
     std::string word;
-    while (infile >> word)
-    {
+    while (infile >> word) {
         tempWords.push_back(word);
     }
 }
