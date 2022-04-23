@@ -5,6 +5,7 @@
 #include <vector>
 #include <deque>
 #include <map>
+#include <algorithm>
 
 textgen::textgen(std::string pathToSource, int prefixLength)
 {
